@@ -1,56 +1,37 @@
 {
-  "name": "react-pwa",
-  "version": "2.2.5",
-  "description": "A highly scalable, Progressive Web Application foundation with the best Developer Experience (DX).",
+  "name": "korea-pet-rescue",
+  "version": "1.0.0",
+  "description": "Client for pet adoption community in Korea",
+  "author": "Robert Lombardo",
+  "private": true,
   "scripts": {
-    "start": "pawjs --no-cache --env=development start",
-    "build": "pawjs --no-cache --config=./prod-pawconfig.json --env=production build",
-    "build:demo": "pawjs --no-cache --config=./demo-pawconfig.json --env=production build",
-    "lint": "pawjs lint",
-    "test": "pawjs --no-cache test",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "test": "jest"
   },
-  "author": {
-    "name": "Atyantik Technologies",
-    "email": "admin@atyantik.com",
-    "url": "https://www.atyantik.com/"
-  },
-  "contributors": [
-    {
-      "name": "Tirth Bodawala",
-      "email": "tirthbodawala@atyantik.com",
-      "url": "https://www.atyantik.com/"
-    },
-    {
-      "name": "Yash Thakur",
-      "email": "thakur.yash514@gmail.com",
-      "url": "http://yashthakur.in/"
-    },
-    {
-      "name": "Ajay Patel",
-      "email": "ajaypatel@atyantik.com",
-      "url": "https://www.atyantik.com/"
-    }
-  ],
-  "license": "MIT",
   "dependencies": {
-    "@pawjs/image-optimizer": "^2.2.0-beta.0",
-    "@pawjs/pawjs": "^2.4.0-beta.0",
-    "@pawjs/sass": "^2.2.0-beta.0",
-    "@pawjs/srcset": "^2.1.0-beta.0",
-    "@types/react": "^16.8.10",
-    "@types/react-dom": "^16.8.3",
-    "bulma": "^0.7.4",
-    "cloudinary": "^1.14.0",
-    "eslint-import-resolver-webpack": "^0.11.0",
-    "fork-ts-checker-webpack-plugin": "^1.0.1",
-    "prop-types": "^15.7.2",
-    "snyk": "^1.143.1",
-    "universal-fetch": "^1.0.0"
+    "nuxt": "^2.0.0",
+    "cross-env": "^5.2.0",
+    "@hapi/hapi": "^18.3.1",
+    "@nuxtjs/hapi": "^2.2.1",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxtjs/dotenv": "^1.4.0"
   },
-  "snyk": true,
   "devDependencies": {
-    "webpack-bundle-analyzer": "^3.1.0"
+    "nodemon": "^1.18.9",
+    "@nuxtjs/vuetify": "^1.0.0",
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0",
+    "vue-jest": "^4.0.0-0"
   }
 }
